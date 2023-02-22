@@ -4,43 +4,101 @@
 	align-items: center;
 }
 
+@mixin circle {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	position: absolute;
+	top: 10px;
+}
+
+@mixin button {
+	width: 100%;
+	height: 45px;
+	margin-top: 10px;
+	border-radius: 3px;
+
+	border: none;
+	font-size: medium;
+
+	cursor: pointer;
+}
+
 .login {
 	@include flex-center;
+	border-radius: 3px;
+	background: #3d3d3e;
 	margin-top: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	height: 400px;
+	position: relative;
+	.red-circle {
+		@include circle;
+		background-color: #fc625d;
+		left: 8px;
+	}
+	.yellow-circle {
+		@include circle;
+		background-color: #fdbc40;
+		left: 27px;
+	}
+	.green-circle {
+		@include circle;
+		background-color: #35cd4b;
+		left: 46px;
+	}
 }
 
 .loginbox {
-    margin: 0;
+	margin-top: 40px;
 	@include flex-center;
 	width: 30rem;
-	height: 20rem;
-	background: snow;
-    .inputplace {
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-    }
-	input {
-        height: 45px;
-		margin-top: 15px;
-        border:1px solid #d5d5d5;
-        border-radius: 3px;
-	}
-	label {
+	height: 21.5rem;
+	background: white;
+	.info {
 		font-size: x-large;
+		margin-bottom: 10px;
+		p {
+			margin: 0;
+			padding: 0;
+		}
 	}
+	.inputplace {
+		display: flex;
+		flex-direction: column;
+		width: 400px;
+		border-radius: 3px;
+	}
+	input {
+		height: 45px;
+		margin-top: 7px;
+		border: 1px solid #d5d5d5;
+		border-radius: 3px;
+	}
+	input::placeholder {
+		color: rgb(169, 169, 169);
+		text-align: center;
+	}
+	input:focus {
+		outline: none !important;
+		border-color: #d6d6d6;
+		box-shadow: 0 0 5px #d6d6d6;
+	}
+
 	.button {
 		@include flex-center;
-		button {
-			width: 100%;
-            height: 45px;
-            border-radius: 3px;
-			margin-top: 20px;
-			background: #ffaf64;
-			border: none;
-			font-size: medium;
+		flex-direction: column;
+		.assign {
+			@include button;
+			background: #595959;
 			color: white;
-			cursor: pointer;
+		}
+		.join {
+			@include button;
+			color: rgb(60, 60, 60);
+			background: #d6d6d6;
 		}
 	}
 }
