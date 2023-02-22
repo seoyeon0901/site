@@ -1,0 +1,46 @@
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login {
+	@include flex-center;
+	margin-top: 150px;
+}
+
+.loginbox {
+    margin: 0;
+	@include flex-center;
+	width: 30rem;
+	height: 20rem;
+	background: snow;
+    .inputplace {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+    }
+	input {
+        height: 45px;
+		margin-top: 15px;
+        border:1px solid #d5d5d5;
+        border-radius: 3px;
+	}
+	label {
+		font-size: x-large;
+	}
+	.button {
+		@include flex-center;
+		button {
+			width: 100%;
+            height: 45px;
+            border-radius: 3px;
+			margin-top: 20px;
+			background: #ffaf64;
+			border: none;
+			font-size: medium;
+			color: white;
+			cursor: pointer;
+		}
+	}
+}
